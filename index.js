@@ -65,10 +65,26 @@ function draw() {
   let fy2 = fy1;
 
   let fx3 = 150 + side4 / 2;
-  let fy3 = 200 - (side4 * sqrt(3)) / 2;
+  let fy3 = 210 - (side4 * sqrt(3)) / 2;
 
   push()
   fill("red");
   triangle(fx1, fy1, fx2, fy2, fx3, fy3);
   pop()
+
+//   let side4 = side / 2;
+
+//   let fx1 = 150;
+//   let fy1 = 212;
+
+//   let fx2 = 100 + 150;
+//   let fy2 = fy1;
+
+//   let fx3 = 150 + side4 / 2;
+//   let fy3 = 200 - (side4 * sqrt(3)) / 2;
+
+//   push()
+//   fill("red");
+//   triangle(fx1, fy1, fx2, fy2, fx3, fy3);
+//   pop()
 }
