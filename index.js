@@ -42,17 +42,17 @@ function draw() {
 
   let side3 = side / 2;
 
-  let tx1 = 200;
+  let tx1 = 100 + side3;
   let ty1 = 300;
 
-  let tx2 = 100 + 200;
+  let tx2 = tx1 + side3;
   let ty2 = ty1;
 
-  let tx3 = 200 + side3 / 2;
-  let ty3 = 300 - (side3 * sqrt(3)) / 2;
+  let tx3 = tx1 + side3 / 2;
+  let ty3 = ty1 - (side3 * sqrt(3)) / 2;
 
   push()
-  fill("red");
+  fill("green");
   triangle(tx1, ty1, tx2, ty2, tx3, ty3);
   pop()
 
@@ -64,11 +64,11 @@ function draw() {
   let fx2 = 100 + 150;
   let fy2 = fy1;
 
-  let fx3 = 150 + side4 / 2;
+  let fx3 = 100 + side4 ;
   let fy3 = 210 - (side4 * sqrt(3)) / 2;
 
   push()
-  fill("red");
+  fill("blue");
   triangle(fx1, fy1, fx2, fy2, fx3, fy3);
   pop()
 
@@ -87,8 +87,4 @@ function draw() {
   fill("orange");
   triangle(ffx1, ffy1, ffx2, ffy2, ffx3, ffy3);
   pop()
-}
-
-function triangles() {
-  
 }
