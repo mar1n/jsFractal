@@ -34,7 +34,6 @@ function draw() {
 
   let sx3 = sx1 + side2 / 2;
   let sy3 = sy1 - (side2 * sqrt(3)) / 2;
-
   push()
   fill("red");
   triangle(sx1, sy1, sx2, sy2, sx3, sy3);
@@ -58,14 +57,14 @@ function draw() {
 
   let side4 = side / 2;
 
-  let fx1 = 150;
-  let fy1 = 212;
+  let fx1 = 100 + side4 / 2;
+  let fy1 = 300 - (side4 * sqrt(3)) / 2;
 
-  let fx2 = 100 + 150;
-  let fy2 = fy1;
+  let fx2 = 100 + fx1;
+  let fy2 = 300 - (side4 * sqrt(3)) / 2;
 
-  let fx3 = 100 + side4 ;
-  let fy3 = 210 - (side4 * sqrt(3)) / 2;
+  let fx3 = 100 + side / 2 ;
+  let fy3 = 300 - (side * sqrt(3)) / 2;
 
   push()
   fill("blue");
