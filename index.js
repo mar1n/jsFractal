@@ -73,14 +73,14 @@ function draw() {
 
   let side5 = side / 2;
 
-  let ffx1 = 150;
-  let ffy1 = 212;
+  let ffx1 = 100 + side5 / 2;
+  let ffy1 = 300 - (side4 * sqrt(3)) / 2;
 
-  let ffx2 = 100 + 150;
-  let ffy2 = ffy1;
+  let ffx2 = 100 + ffx1;
+  let ffy2 = 300 - (side4 * sqrt(3)) / 2;
 
-  let ffx3 = 150 + side5 / 2;
-  let ffy3 = 385 - (side5 * sqrt(3)) / 2;
+  let ffx3 = 100 + side5;
+  let ffy3 = 300
 
   push()
   fill("orange");
