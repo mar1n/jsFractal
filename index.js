@@ -120,24 +120,24 @@ function recursion(stage) {
     let ffx1 = 100 + side5 / 2;
     let ffy1 = 300 - (side5 * sqrt(3)) / 2;
 
-    let ffx2 = 100 + ffx1;
-    let ffy2 = 300 - (side5 * sqrt(3)) / 2;
+    let ffx2 = ffx1 + side5;
+    let ffy2 = ffy1
 
     let ffx3 = 100 + side5;
     let ffy3 = 300;
 
     push();
-    fill("orange");
+    fill("pink");
     triangle(ffx1, ffy1, ffx2, ffy2, ffx3, ffy3);
     pop();
 
-    let side6 = 100 / 2 ;
+    let side6 = side / 4 ;
 
     let sx1 = 100 + side6 / 2;
     let sy1 = 300 - (side6 * sqrt(3)) / 2;
 
-    let sx2 = 100 / 2 + sx1;
-    let sy2 = 300 - (side6 * sqrt(3)) / 2;
+    let sx2 = sx1 + side6;
+    let sy2 = sy1;
 
     let sx3 = 100 + side6;
     let sy3 = 300;
@@ -156,7 +156,9 @@ function recursion(stage) {
     let tty2 = tty1
 
     let ttx3 = 100 + side / 2
-    let tty3 = 300 - (side * sqrt(3)) / 2;
+    let tty3 = 215
+
+    //console.log('tty3', tty3)
 
     push();
     fill("green");
