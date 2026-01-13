@@ -125,108 +125,26 @@ function recursion(stage) {
 
     let ffx3 = 100 + side5;
     let ffy3 = 300;
-console.log('ffx1', ffx1)
+
     push();
     fill("pink");
     triangle(ffx1, ffy1, ffx2, ffy2, ffx3, ffy3);
     pop();
 
-    let side6 = side / 4 ;
+    let stage2 = side / 4
 
-    let sx1 = 100 + side6 / 2;
-    let sy1 = 300 - (side6 * sqrt(3)) / 2;
+    let sx1 = 100 + 3 * stage2 / 2;
+    let sy1 = 300 - 3 * (stage2 * sqrt(3)) / 2;
 
-    let sx2 = sx1 + side6;
-    let sy2 = sy1;
-//console.log('ffx1', sx1)
-    let sx3 = 100 + side6;
-    let sy3 = 300;
+    let sx2 = sx1 + stage2
+    let sy2 = sy1
 
-    push();
-    fill("orange");
-    triangle(sx1, sy1, sx2, sy2, sx3, sy3);
-    pop();
-
-    let sidet = side / 4 ;
-
-    let ttx1 = 125 + sidet;
-    let tty1 = 215 - (sidet * sqrt(3)) / 2;
-
-    let ttx2 = ttx1 + sidet
-    let tty2 = tty1
-
-    let ttx3 = 100 + side / 2
-    let tty3 = 215
-
-    //console.log('tty3', tty3)
+    let sx3 = 100 + side / 2;
+    let sy3 = 300 - ((side * sqrt(3)) / 2) / 2;
 
     push();
     fill("green");
-    triangle(ttx1, tty1, ttx2, tty2, ttx3, tty3);
-    pop();
-
-    let side7 = 100 / 2 ;
-
-    let ssx1 = 200 + side7 / 2;
-    let ssy1 = 300 - (side7 * sqrt(3)) / 2;
-
-    let ssx2 = 100 / 2 + ssx1;
-    let ssy2 = 300 - (side7 * sqrt(3)) / 2;
-
-    let ssx3 = 200 + side7;
-    let ssy3 = 300;
-
-    push();
-    fill("orange");
-    triangle(ssx1, ssy1, ssx2, ssy2, ssx3, ssy3);
-    pop();
-
-    let side8 = 50 / 2 ;
-
-    let ex1 = 100 + side8 / 2;
-    let ey1 = 300 - (side8 * sqrt(3)) / 2;
-
-    let ex2 = 100 / 4 + ex1;
-    let ey2 = 300 - (side8 * sqrt(3)) / 2;
-
-    let ex3 = 100 + side8;
-    let ey3 = 300;
-
-    push();
-    fill("red");
-    triangle(ex1, ey1, ex2, ey2, ex3, ey3);
-    pop();
-
-    let side9 = 50 / 2 ;
-
-    let tx1 = 150 + side9 / 2;
-    let ty1 = 300 - (side9 * sqrt(3)) / 2;
-
-    let tx2 = 100 / 4 + tx1;
-    let ty2 = 300 - (side9 * sqrt(3)) / 2;
-
-    let tx3 = 150 + side9;
-    let ty3 = 300;
-
-    push();
-    fill("red");
-    triangle(tx1, ty1, tx2, ty2, tx3, ty3);
-    pop();
-
-    let side10 = 25 / 2 ;
-
-    let eex1 = 100 + side10 / 2;
-    let eey1 = 300 - (side10 * sqrt(3)) / 2;
-
-    let eex2 = 100 / 8 + eex1;
-    let eey2 = 300 - (side10 * sqrt(3)) / 2;
-
-    let eex3 = 100 + side10;
-    let eey3 = 300;
-
-    push();
-    fill("silver");
-    triangle(eex1, eey1, eex2, eey2, eex3, eey3);
+    triangle(sx1, sy1, sx2, sy2, sx3, sy3);
     pop();
     //xcs();
   } else {
