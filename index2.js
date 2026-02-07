@@ -146,6 +146,22 @@ function recursion(stage) {
     fill("green");
     triangle(sx1, sy1, sx2, sy2, sx3, sy3);
     pop();
+
+    let stage3 = side / 4
+
+    let ssx1 = 100 + stage2 / 2;
+    let ssy1 = 300 - (stage2 * sqrt(3)) / 2;
+
+    let ssx2 = ssx1 + stage2
+    let ssy2 = ssy1 
+
+    let ssx3 = 100 + side5 / 2;
+    let ssy3 = 300 - (side5 * sqrt(3)) / 2;
+
+    push();
+    fill("green");
+    triangle(ssx1, ssy1, ssx2, ssy2, ssx3, ssy3);
+    pop();
     //xcs();
   } else {
   }
