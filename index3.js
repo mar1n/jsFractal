@@ -4,7 +4,9 @@ function setup() {
 
 function draw() {
   background(220);
-
+  for(let x = 0; x <=2; x++) {
+    console.log('x', x)
+  }
   recursion(1);
 }
 
@@ -282,6 +284,7 @@ function recursion(stage) {
     // triangle(ssx1, ssy1, ssx2, ssy2, ssx3, ssy3);
     // pop();
     //xcs();
+    noLoop(); 
   } else {
   }
 }
