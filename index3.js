@@ -139,13 +139,13 @@ function recursion(stage) {
 
     let side5 = points[0].side / 2;
 
-    let ffx1 = points[0].x2 / 4;
+    let ffx1 = points[0].x1 + side5 / 2;
     let ffy1 = points[0].y1 - (side5 * sqrt(3)) / 2;
 
     let ffx2 = ffx1 + side5;
     let ffy2 = ffy1;
 
-    let ffx3 = points[0].x2 / 2;
+    let ffx3 = points[0].x3;
     let ffy3 = points[0].y2;
     // console.log(ffx3)
     // console.log(ffy3)
@@ -161,7 +161,7 @@ function recursion(stage) {
 
     let side6 = side5 / 2;
 
-    let fffx1 = B.x / 2;
+    let fffx1 = A.x + side6 / 2;
     let fffy1 = A.y - (side6 * sqrt(3)) / 2;
 
     let fffx2 = fffx1 + side6;
@@ -218,7 +218,7 @@ function recursion(stage) {
     let E = { x: ffx3, y: ffy3 }; // right
     let F = { x: ffx1, y: ffy1 }; // top
 
-    let fffLx1 = F.x / 2;
+    let fffLx1 = D.x  + side6 / 2;
     let fffLy1 = D.y - (side6 * sqrt(3)) / 2;
 
     let fffLx2 = fffLx1 + side6;
