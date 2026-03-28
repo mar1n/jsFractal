@@ -3,12 +3,12 @@ var triangles = [{side: 0}]
 function recursion(value, ) {
     console.log('value', value)
     console.log('triangle side test', triangles[value])
-    let side = triangles[value].side
   if (value === stage) {
     return;
   }
+  
+  triangles.push({side: triangles[value].side + 1})
   value++;
-  triangles.push({side: side + 1})
   return recursion(value);
 }
 
