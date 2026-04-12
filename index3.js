@@ -3,13 +3,24 @@ function setup() {
 }
 
 var exampleOfCounter = 0;
-
+var points = [
+  {
+    side: 200,
+    x1: 0,
+    y1: 300,
+    x2: 0 + 200,
+    y2: 300,
+    x3: 0 + 200 / 2,
+    y3: 300 - (200 * Math.sqrt(3)) / 2,
+  },
+];
+var triangles = []
 function draw() {
   background(220);
   // for(let x = 0; x <=2; x++) {
   //   console.log('x', x)
   // }
-  recursion(exampleOfCounter);
+  recursion(exampleOfCounter, points);
 }
 function xcs() {
   let side5 = 100;
@@ -29,59 +40,52 @@ function xcs() {
   pop();
 }
 
-function recursion(stage) {
+
+
+function recursion(stage, points) {
   console.log('stage', stage)
-  let side = 200;
+  console.log('points', points)
+  console.log('triangles', triangles)
+  // let side = 200;
 
-  // Bottom-left point
-  let x1 = 0;
-  let y1 = 300;
-  let points = [
-    {
-      side: side,
-      x1: x1,
-      y1: y1,
-      x2: x1 + side,
-      y2: y1,
-      x3: x1 + side / 2,
-      y3: y1 - (side * sqrt(3)) / 2,
-    },
-  ];
-  if (stage === 0) {
-    let side = 200;
+  // // Bottom-left point
+  // let x1 = 0;
+  // let y1 = 300;
+  // if (stage === 0) {
+  //   let side = 200;
 
-    // Bottom-left point
-    let x1 = 100;
-    let y1 = 300;
+  //   // Bottom-left point
+  //   let x1 = 100;
+  //   let y1 = 300;
 
-    // Bottom-right point
-    let x2 = x1 + side;
-    let y2 = y1;
+  //   // Bottom-right point
+  //   let x2 = x1 + side;
+  //   let y2 = y1;
 
-    // Top point (centered)
-    let x3 = x1 + side / 2;
-    let y3 = y1 - (side * sqrt(3)) / 2;
+  //   // Top point (centered)
+  //   let x3 = x1 + side / 2;
+  //   let y3 = y1 - (side * sqrt(3)) / 2;
 
-    push();
-    fill(255);
-    triangle(x1, y1, x2, y2, x3, y3);
-    pop();
-    exampleOfCounter++
-  }
-  if (stage === 1) {
-    let side = 200;
+  //   push();
+  //   fill(255);
+  //   triangle(x1, y1, x2, y2, x3, y3);
+  //   pop();
+  //   exampleOfCounter++
+  // }
+  
+    // let side = 200;
 
-    // Bottom-left point
-    let x1 = points[0].x1;
-    let y1 = points[0].y1;
+    // // Bottom-left point
+    // let x1 = points[0].x1;
+    // let y1 = points[0].y1;
 
-    // Bottom-right point
-    let x2 = x1 + side;
-    let y2 = y1;
+    // // Bottom-right point
+    // let x2 = x1 + side;
+    // let y2 = y1;
 
-    // Top point (centered)
-    let x3 = x1 + side / 2;
-    let y3 = y1 - (side * sqrt(3)) / 2;
+    // // Top point (centered)
+    // let x3 = x1 + side / 2;
+    // let y3 = y1 - (side * sqrt(3)) / 2;
     for(angle of  points) {
 console.log('angle', angle)
       push();
@@ -157,107 +161,111 @@ console.log('angle', angle)
 
     // console.log(ffx3)
     // console.log(ffy3)
-points.push({side: side / 2, x1: points.x1, y1: points.y1, })
-    push();
-    fill("green");
-    triangle(ffx1, ffy1, ffx2, ffy2, ffx3, ffy3);
-    pop();
+points.push({ x1: ffx1, y1: ffy1, x2: ffx2, y2: ffy2, x3: ffx3, y3: ffy3 })
 
-    let A = { x: ffx1, y: ffy1 }; // left
-    let B = { x: ffx2, y: ffy2 }; // right
-    let C = { x: points[0].x3, y: points[0].y3 }; // top
+triangles.push({ x1: points[0].x1, y1: points[0].y1, x2:ffx2 , y2: ffy2, x3: ffx3, y3: ffy3 })
+triangles.push({ x1: ffx1, y1: ffy1, x2: ffx2, y2: ffy2, x3: points[0].x3, y3: points[0].y3})
+triangles.push({ x1:ffx3, y1: ffy3, x2: points[0].x2, y2: points[0].y2, x3: ffx2, y3: ffy2})
+// push();
+    // fill("green");
+    // triangle(ffx1, ffy1, ffx2, ffy2, ffx3, ffy3);
+    // pop();
 
-    let side6 = side5 / 2;
+    // let A = { x: ffx1, y: ffy1 }; // left
+    // let B = { x: ffx2, y: ffy2 }; // right
+    // let C = { x: points[0].x3, y: points[0].y3 }; // top
 
-    let fffx1 = A.x + side6 / 2;
-    let fffy1 = A.y - (side6 * sqrt(3)) / 2;
+    // let side6 = side5 / 2;
 
-    let fffx2 = fffx1 + side6;
-    let fffy2 = fffy1;
+    // let fffx1 = A.x + side6 / 2;
+    // let fffy1 = A.y - (side6 * sqrt(3)) / 2;
 
-    let fffx3 = C.x;
-    let fffy3 = B.y;
+    // let fffx2 = fffx1 + side6;
+    // let fffy2 = fffy1;
 
-    push();
-    fill("orange");
+    // let fffx3 = C.x;
+    // let fffy3 = B.y;
+
+    // push();
+    // fill("orange");
 
     
-    triangle(fffx1, fffy1, fffx2, fffy2, fffx3, fffy3);
-    pop();
-    let D = { x: points[0].x1, y: points[0].y1 }; // left
-    let E = { x: ffx3, y: ffy3 }; // right
-    let F = { x: ffx1, y: ffy1 }; // top
+    // triangle(fffx1, fffy1, fffx2, fffy2, fffx3, fffy3);
+    // pop();
+    // let D = { x: points[0].x1, y: points[0].y1 }; // left
+    // let E = { x: ffx3, y: ffy3 }; // right
+    // let F = { x: ffx1, y: ffy1 }; // top
 
-    let fffLx1 = D.x  + side6 / 2;
-    let fffLy1 = D.y - (side6 * sqrt(3)) / 2;
+    // let fffLx1 = D.x  + side6 / 2;
+    // let fffLy1 = D.y - (side6 * sqrt(3)) / 2;
 
-    let fffLx2 = fffLx1 + side6;
-    let fffLy2 = fffLy1;
+    // let fffLx2 = fffLx1 + side6;
+    // let fffLy2 = fffLy1;
 
-    let fffLx3 = F.x;
-    let fffLy3 = E.y;
+    // let fffLx3 = F.x;
+    // let fffLy3 = E.y;
 
-    push();
-    fill("orange");
-    triangle(fffLx1, fffLy1, fffLx2, fffLy2, fffLx3, fffLy3);
-    pop();
+    // push();
+    // fill("orange");
+    // triangle(fffLx1, fffLy1, fffLx2, fffLy2, fffLx3, fffLy3);
+    // pop();
 
-    let G = { x: ffx3, y: ffy3 };
-    let H = { x: points[0].x2, y: points[0].y2 };
-    let I = { x: ffx2, y: ffy2 };
+    // let G = { x: ffx3, y: ffy3 };
+    // let H = { x: points[0].x2, y: points[0].y2 };
+    // let I = { x: ffx2, y: ffy2 };
 
-    let fffffLx1 = G.x + side6 / 2;
-    let fffffLy1 = G.y - (side6 * sqrt(3)) / 2;
+    // let fffffLx1 = G.x + side6 / 2;
+    // let fffffLy1 = G.y - (side6 * sqrt(3)) / 2;
 
-    let fffffLx2 = fffffLx1 + side6;
-    let fffffLy2 = fffffLy1;
+    // let fffffLx2 = fffffLx1 + side6;
+    // let fffffLy2 = fffffLy1;
 
-    let fffffLx3 = I.x;
-    let fffffLy3 = H.y;
+    // let fffffLx3 = I.x;
+    // let fffffLy3 = H.y;
 
-    push();
-    fill("orange");
-    triangle(fffffLx1, fffffLy1, fffffLx2, fffffLy2, fffffLx3, fffffLy3);
-    pop();
+    // push();
+    // fill("orange");
+    // triangle(fffffLx1, fffffLy1, fffffLx2, fffffLy2, fffffLx3, fffffLy3);
+    // pop();
     
-    let AA = { x: fffx1, y: fffy1 }; // left
-    let BB = { x: fffx2, y: fffy2 }; // right
-    let CC = { x: points[0].x3, y: points[0].y3 }; // top
-
-    let side66 = side6 / 2;
-
-    let ffffx1 = AA.x + side66 / 2
-    let ffffy1 = AA.y - (side66 * sqrt(3)) / 2;
-
-    let ffffx2 = ffffx1 + side66
-    let ffffy2 = ffffy1
-
-    let ffffx3 = CC.x;
-    let ffffy3 = BB.y;
-
-    push();
-    fill("red");
-    triangle(ffffx1, ffffy1, ffffx2, ffffy2, ffffx3, ffffy3);
-    pop();
-    let AAA = { x: ffx1, y: ffy1 }; // left
-    let BBB = { x: fffx3, y: fffy3 }; // right
-    let CCC = { x: fffx1, y: fffy1 }; // top
+    // let AA = { x: fffx1, y: fffy1 }; // left
+    // let BB = { x: fffx2, y: fffy2 }; // right
+    // let CC = { x: points[0].x3, y: points[0].y3 }; // top
 
     // let side66 = side6 / 2;
 
-    let fffffx1 = AAA.x + side66 / 2
-    let fffffy1 = AAA.y - (side66 * sqrt(3)) / 2;
+    // let ffffx1 = AA.x + side66 / 2
+    // let ffffy1 = AA.y - (side66 * sqrt(3)) / 2;
 
-    let fffffx2 = fffffx1 + side66
-    let fffffy2 = fffffy1
+    // let ffffx2 = ffffx1 + side66
+    // let ffffy2 = ffffy1
 
-    let fffffx3 = CCC.x;
-    let fffffy3 = BBB.y;
+    // let ffffx3 = CC.x;
+    // let ffffy3 = BB.y;
 
-    push();
-    fill("red");
-    triangle(fffffx1, fffffy1, fffffx2, fffffy2, fffffx3, fffffy3);
-    pop();
+    // push();
+    // fill("red");
+    // triangle(ffffx1, ffffy1, ffffx2, ffffy2, ffffx3, ffffy3);
+    // pop();
+    // let AAA = { x: ffx1, y: ffy1 }; // left
+    // let BBB = { x: fffx3, y: fffy3 }; // right
+    // let CCC = { x: fffx1, y: fffy1 }; // top
+
+    // // let side66 = side6 / 2;
+
+    // let fffffx1 = AAA.x + side66 / 2
+    // let fffffy1 = AAA.y - (side66 * sqrt(3)) / 2;
+
+    // let fffffx2 = fffffx1 + side66
+    // let fffffy2 = fffffy1
+
+    // let fffffx3 = CCC.x;
+    // let fffffy3 = BBB.y;
+
+    // push();
+    // fill("red");
+    // triangle(fffffx1, fffffy1, fffffx2, fffffy2, fffffx3, fffffy3);
+    // pop();
 
 
     //  let D = {x: points[0].x1, y: points[0].y1} // left
@@ -297,9 +305,15 @@ points.push({side: side / 2, x1: points.x1, y1: points.y1, })
 //     if(stage === 2) {
 //   return undefined
 // }
+if(stage === 1 ) {
+  console.log('stop')
+  return undefined
+}
+let p = points
     exampleOfCounter++
-    noLoop(); 
-    return recursion(exampleOfCounter)
-  } else {
-  }
+    noLoop();
+    //stage += 1
+    return recursion(exampleOfCounter, p)
+  
+  
 }
